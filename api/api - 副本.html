@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title> 有赞 API 文档</title>
+
+<link rel="stylesheet" href="css/bootstrap3.min.css">
+<script src="js/jquery-2.0.3.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="page-header">
+            <h2>前海时尚春天 API 文档</h2>
+            <p>
+                目前已开放：首页展示
+				<!--
+                <a class="pull-right" style="margin-left:20px;" href="http://open.koudaitong.com/doc/notice/email">
+                    <code> 订阅更新</code>
+                </a>
+                <a class="pull-right" href="http://open.koudaitong.com/doc/api/logs">
+                                    <code>更新日志</code>
+                                </a>
+								-->
+            </p>
+        </div>
+
+        <p class="lead">通讯协议</p>
+        
+        <p>调用 API 可通过以下两种通讯协议：</p>
+        
+        <p>
+            1、<a href="http://open.koudaitong.com/doc/api/oauthprotocol">AccessToken 免签名通讯协议</a>
+            <span style="margin-left:10px;">适用于：ERP开发商、ISV开发商</span>
+        </p>
+        
+        <p>
+            2、<a href="http://open.koudaitong.com/doc/api/protocol">AppId / AppSecret 签名通讯协议</a>
+            <span style="margin-left:10px;">适用于：个人开发者、单店铺开发者</span>
+        </p>
+        
+        <p>
+            <a href="http://open.koudaitong.com/doc/api/errors">全局错误返回码说明</a>
+        </p>
+
+        <hr>
+
+        <p class="lead">商品接口</p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.item.add">kdt.item.add</a>
+            新增一个商品        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.item.delete">kdt.item.delete</a>
+            删除一个商品        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.item.get">kdt.item.get</a>
+            得到单个商品信息        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.item.sku.update">kdt.item.sku.update</a>
+            更新SKU信息        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.item.update">kdt.item.update</a>
+            更新单个商品信息        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.item.update.delisting">kdt.item.update.delisting</a>
+            商品下架        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.item.update.listing">kdt.item.update.listing</a>
+            商品上架        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.items.custom.get">kdt.items.custom.get</a>
+            根据商品货号获取商品        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.items.inventory.get">kdt.items.inventory.get</a>
+            获取仓库中的商品列表        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.items.onsale.get">kdt.items.onsale.get</a>
+            获取出售中的商品列表        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.skus.custom.get">kdt.skus.custom.get</a>
+            根据外部编号取商品Sku        </p>
+            <br>
+        <p class="lead">类目接口</p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.itemcategories.get">kdt.itemcategories.get</a>
+            获取商品分类二维列表        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.itemcategories.promotions.get">kdt.itemcategories.promotions.get</a>
+            获取商品推广栏目列表        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.itemcategories.tags.get">kdt.itemcategories.tags.get</a>
+            获取商品自定义标签列表        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.itemcategories.tags.getpage">kdt.itemcategories.tags.getpage</a>
+            分页获取商品自定义标签列表        </p>
+            <br>
+        <p class="lead">物流接口</p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.logistics.online.confirm">kdt.logistics.online.confirm</a>
+            卖家确认发货        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.logistics.online.marksign">kdt.logistics.online.marksign</a>
+            卖家标记签收        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.logistics.trace.search">kdt.logistics.trace.search</a>
+            物流流转信息查询        </p>
+            <br>
+        <p class="lead">交易接口</p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.trade.close">kdt.trade.close</a>
+            卖家关闭一笔交易        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.trade.get">kdt.trade.get</a>
+            获取单笔交易的信息        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.trade.memo.update">kdt.trade.memo.update</a>
+            修改一笔交易备注        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.trades.sold.get">kdt.trades.sold.get</a>
+            查询卖家已卖出的交易列表        </p>
+            <br>
+        <p class="lead">用户接口</p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.users.weixin.follower.get">kdt.users.weixin.follower.get</a>
+            根据微信粉丝用户的 openid 或 user_id 获取用户信息        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.users.weixin.follower.gets">kdt.users.weixin.follower.gets</a>
+            根据多个微信粉丝用户的 openid 或 user_id 获取用户信息        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=kdt.users.weixin.followers.get">kdt.users.weixin.followers.get</a>
+            查询微信粉丝用户信息        </p>
+            <br>
+        <p class="lead">联盟接口</p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=union.market.items.delete">union.market.items.delete</a>
+            批量删除广告位中商品        </p>
+            <p>
+            <a href="http://open.koudaitong.com/doc/api?method=union.market.items.get">union.market.items.get</a>
+            获取指定广告位中的商品列表        </p>
+            <br>
+        <hr>
+    </div>
+
+    <footer>
+        <p class="text-muted text-center">© youzan.com</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>清算中心 - 前海时尚春天 API 文档</title>
+
+<link rel="stylesheet" href="../css/bootstrap3.min.css">
+<script src="../js/jquery-2.0.3.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+            </p>
+                        <h3>clearing/address 清算中心</h3>
+        
+            <p>
+                用户收货地址列表            </p>
+				
+				    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/clearing/address            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>kuanshi&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					                                                        <tr>
+                        <td>id</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>当前页产品id</td>
+                    </tr>
+										                                                        <tr>
+                        <td>token</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户token</td>
+                    </tr>
+		
+
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{
+	"tag":"address",
+	"data":
+	{
+		"uid":1,
+		"token":"123123"
+	}
+} 
+
+           </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+	{
+		"errcode":0,
+		"msg":"ok",
+		"data":
+		{
+			"last":"5",
+			"items":
+			[
+				{
+					"id":"5",
+					"realname":"admin",
+					"zip_code":"\u90ae\u7f16",
+					"mobile":"13800138000",
+					"province_id":"1",
+					"city_id":"2",
+					"area_id":"3",
+					"address":"\u6df1\u5733\u798f\u7530",
+					"n1":"\u4e2d\u56fd",
+					"n2":"\u5317\u4eac",
+					"n3":"\u5b89\u5fbd"
+				}
+			]
+		}
+	}       </pre>
+        </div>
+        <hr>
+		
+		<div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+            </p>
+			<a name="submit"></a>
+                        <h3>clearing/submit 提交订单</h3>
+        
+            <p>
+                提交订单            </p>
+				
+				    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/clearing/submit            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>clearing&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+							                                                        <tr>
+                        <td>token</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>token</td>
+                    </tr>
+										                                                        <tr>
+                        <td>exp</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>配送方式</td>
+                    </tr>
+										                                                        <tr>
+                        <td>invoice</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>是否索取发票</td>
+                    </tr>
+					
+														                                                        <tr>
+                        <td>address</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>收货地址</td>
+                    </tr>
+														                                                        <tr>
+                        <td>items</td>
+                        <td>Array</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>商品信息</td>
+                    </tr>
+																			                                                        <tr>
+                        <td>&nbsp;   id</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>商品id</td>
+                    </tr>
+																			                                                        <tr>
+                        <td>  num</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>商品数量</td>
+                    </tr>
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{
+"tag":"clearing_submit",
+"data":
+	{
+	"uid":1,
+	"token":"ddddd",
+	"exp":1,      //配送类型，1-快递，2-自提，3-送货
+	"exp_id":1,      //类型id，没有则为"0"，
+	"invoice":1,     //0-不开发票，1-个人，2-单位
+	"invoice_title":"发票抬头", //个人发票或者不取发票时为空
+	"address":
+	{
+		"province_id":1, //省份id
+		"city_id":1,     //城市id
+		"area_id":3,     //
+		"detail":"shenzhenfutian"
+	},
+	"hongbao":
+	{
+		"id":1,
+		"code":"abcde"
+	},
+	"items":
+		[
+			{
+				"id":1,
+				"num":2
+			},
+			{
+				"id":2,
+				"num":2
+			}
+		]
+	}
+}            </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+"errcode":0,
+"msg":"ok",
+"data":
+{
+	"total":2,                  //购买的商品数
+	"order_no":"HM1432696913"  //订单号
+	"order_id":"12"            //订单id
+	"status" : "1"             //状态（1.支付成功，2-支付失败，0-未知错误）
+}
+}        </pre>
+        </div>
+		
+	<hr/>
+	
+	<div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+            </p>
+			<a name="hongbao"></a>
+                        <h3>clearing/hongbao 用户可用红包列表</h3>
+        
+            <p>
+                用户红包列表            </p>
+				
+				    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/clearing/hongbao            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>clearing&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+							                                                        <tr>
+                        <td>token</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>token</td>
+                    </tr>
+
+					
+
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{
+	"tag":"hongbao",
+	"data":
+	{
+		"uid":1,
+		"token":"123123"
+	}
+}             </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+	"errcode":0,
+	"msg":"ok",
+	"data":
+	{
+		"items":
+		[
+			{  
+			"id":"2", //id
+			"codes":"ASDFG",  //红包编码
+			"amount":99.99  //抵扣金额
+			"intro":99.99  //红包说明
+			"status":"0"  //红包状态(0-未使用，1-已经使用)
+			}
+		]
+	}
+}       </pre>
+        </div>
+		
+		
+			
+		
+	
+	
+<div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+            </p>
+			<a name="info"></a>
+                        <h3>clearing/index 结算中心相关信息</h3>
+        
+            <p>
+                提交订单            </p>
+				
+				    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/clearing/index            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>clearing&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+							                                                        <tr>
+                        <td>token</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>token</td>
+                    </tr>
+
+					
+
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{
+	"tag":"hongbao",
+	"data":
+	{
+		"uid":1,
+		"token":"123123"
+	}
+}             </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+			{"errcode":0,
+				"msg":"ok",
+				"data":
+				{
+				//用户上一次选择的配送方式(1-快递,2-自取,3-送货)
+					
+					"exp":
+						{
+							"last":"1", //上次选择物流方式
+							"items":{
+							"1":"\u5feb\u9012\u65b9\u5f0f", 
+							"2":
+								[
+									{
+										"id":"1", //id
+										"address":"\u6df1\u5733\u7f57\u6e56",  //地址
+										"tel":13800138000                      //电话
+									},
+									{
+										"id":"2",
+										"address":"\u6df1\u5733\u798f\u7530",
+										"tel":"13800138000"
+									}
+								],
+							"3":"2000\u9001\u8d27\u8d39\uff0c24\u5c0f\u65f6\u914d\u9001\uff0c\u504f\u8fdc\u5730\u533a\u9664\u5916"
+							}
+						},
+						"address":
+						{
+							"id":"5",
+							"address":"\u6df1\u5733\u798f\u7530",
+							"tel":"13418856247",
+							"realname":"admin",
+							"province_id":"1",
+							"city_id":"2",
+							"area_id":"3",
+							"n1":"\u4e2d\u56fd",
+							"n2":"\u5317\u4eac",
+							"n3":"\u5b89\u5fbd",
+							"zip":"\u90ae\u7f16",
+							"mobile":"13800138000"
+						}
+					"hongbao":
+						[
+							{
+								"id":"2",  //id
+								"codes":"ASDFG" //红包标示码
+							}
+						]
+					}
+			}      </pre>
+        </div>	
+		
+	
+	
+		
+		
+    </div>
+
+    <footer>
+        <p class="text-muted text-center">© 前海时尚春天</p>
+    </footer>
+</body>
+</html>

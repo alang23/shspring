@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title> 前海时尚春天 API 文档</title>
+
+<link rel="stylesheet" href="css/bootstrap3.min.css">
+<script src="js/jquery-2.0.3.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="page-header">
+            <h2>前海时尚春天 API 文档</h2>
+            <p>
+                目前已开放：首页展示,注册
+				<!--
+                <a class="pull-right" style="margin-left:20px;" href="http://open.koudaitong.com/doc/notice/email">
+                    <code> 订阅更新</code>
+                </a>
+                <a class="pull-right" href="http://open.koudaitong.com/doc/api/logs">
+                                    <code>更新日志</code>
+                                </a>
+								-->
+            </p>
+			
+			
+        </div>
+<!--
+        <p class="lead">通讯协议</p>
+        
+        <p>调用 API 可通过以下两种通讯协议：</p>
+        
+        <p>
+            1、<a href="http://open.koudaitong.com/doc/api/oauthprotocol">AccessToken 免签名通讯协议</a>
+            <span style="margin-left:10px;">适用于：ERP开发商、ISV开发商</span>
+        </p>
+        
+        <p>
+            2、<a href="http://open.koudaitong.com/doc/api/protocol">AppId / AppSecret 签名通讯协议</a>
+            <span style="margin-left:10px;">适用于：个人开发者、单店铺开发者</span>
+        </p>
+        
+        <p>
+            <a href="http://open.koudaitong.com/doc/api/errors">全局错误返回码说明</a>
+        </p>
+-->
+      <!--  <hr>-->
+
+        <p class="lead">首页相关接口</p>
+            <p>
+            <a href="doc/navigation.html">/navigation</a>
+            导航轮播        </p>
+           
+			            <p>
+            <a href="doc/banner.html">/banner</a>
+            首页各栏目内容        </p>
+						            <p>
+            <a href="doc/cortex.html">/cortex</a>
+            皮质接口        </p>
+									            <p>
+            <a href="doc/color.html">/color</a>
+            颜色接口        </p>
+			
+												            <p>
+            <a href="doc/color.html#lists">/所属颜色产品</a>
+            点击颜色显示相应产品        </p>
+			
+															            <p>
+            <a href="doc/cortex.html#lists">/所属皮质产品</a>
+            点击皮质显示相应产品        </p>
+																		            <p>
+            <a href="doc/gouzao.html">/构造内容接口</a>
+            构造内容接口        </p>
+			
+            <br>
+        <p class="lead">登陆，注册接口</p>
+				<p>
+            <a href="doc/register.html#sendmsg">/register/sendmsg</a>
+            发送短信        </p>
+            <p>
+            <a href="doc/register.html">/register</a>
+            注册接口        </p>
+			            <p>
+            <a href="doc/login.html">/login</a>
+            登陆        </p>
+						            <p>
+            <a href="doc/login.html#logout">/logout</a>
+           退出登陆        </p>
+						            <p>
+            <a href="doc/register.html#changepwd">/changepwd</a>
+            修改密码        </p>
+			
+									            <p>
+            <a href="doc/register.html#resetpwd">/resetpwd</a>
+            密码重置        </p>
+			
+			
+			
+			
+			<p class="lead">产品列表相关</p>
+				<p>
+            <a href="doc/kuanshi.html">/kuanshi</a>
+            款式列表        </p>
+    				<p>
+            <a href="doc/product_detail.html">/product_detail</a>
+            产品详情        </p>
+    				<p>
+            <a href="doc/recommend.html">/Recommend</a>
+            推荐产品        </p>
+			    				<p>
+            <a href="doc/fav.html">/fav</a>
+            收藏        </p>
+			  <a href="doc/fav.html#lists">/用户收藏列表</a>
+            显示用户收藏产品列表        </p>
+			
+			<p class="lead">购物车</p>
+				<p>
+            <a href="doc/cart.html#buy">/点击购买</a>
+            款式列表        </p>
+							<p>
+            <a href="doc/cart.html#list">/购物袋列表</a>
+            购物袋        </p>
+										<p>
+            <a href="doc/cart.html#selected">/购物车全选/全部选</a>
+            购物车全选/全部选        </p>
+										<p>
+            <a href="doc/clearing.html#address">/用户收货地址</a>
+            款式列表        </p>
+			
+													<p>
+            <a href="doc/address.html#add_address">/添加收货地址</a>
+            添加收货地址        </p>
+																<p>
+            <a href="doc/address.html#del_address">/删除收货地址</a>
+            删除收货地址        </p>
+			
+																			<p>
+            <a href="doc/address.html#set_default">/设置默认收货地址</a>
+            设置默认收货地址        </p>
+													<p>
+            <a href="doc/clearing.html#info">/结算中心相关信息(配送方式,收货地址,红包)</a>
+            结算中心        </p>
+			
+			                                        <p>
+            <a href="doc/clearing.html#submit">/提交订单</a>
+            提交订单        </p>
+						<p>
+            <a href="doc/clearing.html#hongbao">/用户红包列表</a>
+            用户可用红包列表        </p>
+			
+			<p class="lead">我的订单</p>
+
+           <a href="doc/orders.html#lists">/获取订单列表</a>
+            获取用户个人订单列表        </p>
+			<p>
+			<a href="doc/orders.html#detail">/订单详情</a>
+            获取订单详情        </p>
+						<p>
+			<a href="doc/orders.html#updateorderstatus">/订单付款/取消</a>
+            用户修改订单状态        </p>
+			
+									<p>
+			<a href="doc/orders.html#buy_again">/用户再次购买</a>
+            用户再次购买        </p>
+			
+												<p>
+			<a href="doc/orders.html#logistics">/物流跟踪</a>
+            物流跟踪信息        </p>
+			
+															<p>
+			<a href="doc/orders.html#buy_again">/订单再次购买</a>
+            订单再次购买        </p>
+			
+			<p class="lead">寄售</p>
+															<p>
+			<a href="doc/consignment.html#index">/寄售申请</a>
+            用户提交寄售申请        </p>
+			<p>
+			<a href="doc/consignment.html#lists">/个人寄售列表</a>
+            会员个人寄售列表        </p>
+						<p>
+			<a href="doc/consignment.html#del">/删除个人寄售</a>
+            删除个人寄售        </p>
+			
+						<p class="lead">买家秀</p>
+															<p>
+			<a href="doc/xiu.html#index">/发布买家秀</a>
+            买家发布秀        </p>
+
+																		<p>
+			<a href="doc/xiu.html#my_show">/我的买家秀</a>
+            用户个人买家秀        </p>
+																					<p>
+			<a href="doc/xiu.html#lists">/买家秀列表</a>
+            买家秀展示列表        </p>
+																								<p>
+			<a href="doc/xiu.html#detail">/买家秀详情</a>
+            买家秀详情        </p>
+																											<p>
+			<a href="doc/xiu.html#del">/删除买家秀</a>
+            删除买家秀        </p>
+			
+									<p class="lead">街拍</p>
+															<p>
+			<a href="doc/taken.html">/街拍请求地址</a>
+            取得街拍h5请求地址        </p>
+																		<p>
+			<a href="doc/taken.html#lists">/街拍数据列表</a>
+            客户端街拍数据请求        </p>
+
+			
+			<p class="lead">搜索</p>
+				<p>
+			<a href="doc/search.html#index">/热门关键字</a>
+            用户搜索热门关键字        </p>
+			
+			<p>
+			<a href="doc/search.html#realtime">/实时搜索</a>
+            用户输入搜索关键字实时返回        </p>
+						<p>
+			<a href="doc/search.html#result">/搜索结果</a>
+            用户输入搜索关键搜索结果        </p>
+			
+		<p class="lead">系统相关</p>
+				<p>
+			<a href="doc/feedback.html">/意见反馈</a>
+            用户提交意见反馈        </p>
+			
+			
+
+        <hr>
+    </div>
+
+    <footer>
+        <p class="text-muted text-center">© 前海时尚春天</p>
+    </footer>
+</body>
+</html>

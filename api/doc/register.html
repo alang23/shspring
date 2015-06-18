@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>register - 前海时尚春天 API 文档</title>
+
+<link rel="stylesheet" href="../css/bootstrap3.min.css">
+<script src="../js/jquery-2.0.3.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+            </p>
+                        <h3>register 注册</h3>
+        
+            <p>
+                用户注册            </p>
+								    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/register            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>register&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					
+					                                                        <tr>
+                        <td>mobilePhoneNumber</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>接收短信的手机号</td>
+                    </tr>
+					
+										                                                        <tr>
+                        <td>code</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>手机收到的验证码</td>
+                    </tr>
+					
+															                                                        <tr>
+                        <td>passwd</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户密码</td>
+                    </tr>
+
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{
+	"tag":"register",
+	"data":
+	{
+		"mobilePhoneNumber":"15814073945",
+		"code":"123456",
+		"passwd":"123456"
+	}
+}          </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+	"errcode":0,
+	"msg":"注册成功"
+}        </pre>
+        </div>
+		
+		
+		
+<div class="container">
+
+        <div class="page-header">
+                        <p>
+               
+            </p>
+			<a name="changepwd"></a>
+                        <h3>changepwd 修改密码</h3>
+        
+            <p>
+                修改密码接口            </p>
+				           <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/register/changepwd            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>changepwd&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+										                                                        <tr>
+                        <td>token</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>当前token</td>
+                    </tr>
+					                                                        <tr>
+                        <td>mobilePhoneNumber</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>手机号</td>
+                    </tr>
+					
+										                                                        <tr>
+                        <td>passwd</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>原密码</td>
+                    </tr>
+					
+															                                                        <tr>
+                        <td>newpasswd</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>新密码</td>
+                    </tr>
+
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{
+	"tag":"changepwd",
+	"data":
+		{
+			"token":"12313123",
+			"mobilePhoneNumber":"13800138000",
+			"passwd":"123123",
+			"newpasswd":"123123"
+		}
+}           </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+	"errcode":0,
+	"msg":"\u77ed\u4fe1\u53d1\u9001\u6210\u529f"
+}        </pre>
+        </div>
+		
+		
+	
+	
+	<div class="container">
+
+        <div class="page-header">
+                        <p>
+               
+            </p>
+			<a name="resetpwd"></a>
+                        <h3>resetpwd 密码重置</h3>
+        
+            <p>
+                密码重置接口            </p>
+				           <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/register/resetpwd            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>resetpwd&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+
+					                                                        <tr>
+                        <td>mobilePhoneNumber</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>手机号</td>
+                    </tr>
+					
+										                                                        <tr>
+                        <td>passwd</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>密码</td>
+                    </tr>
+					
+															                                                        <tr>
+                        <td>code</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>短信验证码</td>
+                    </tr>
+
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{
+	"tag":"resetpwd",
+	"data":
+		{
+			"mobilePhoneNumber":"13800138000",
+			"passwd":"123123",
+			"code":"123123"
+		}
+}           </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+	"errcode":0,
+	"msg":"\u77ed\u4fe1\u53d1\u9001\u6210\u529f"
+}        </pre>
+        </div>
+		
+			
+		
+				
+    <div class="container">
+
+        <div class="page-header">
+                        <p>
+               
+            </p>
+			<a name="sendmsg"></a>
+                        <h3>sendmsg 发送验证码</h3>
+        
+            <p>
+                发送验证码接口            </p>
+				           <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/register/sendmsg            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>sendmsg&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					
+					                                                        <tr>
+                        <td>mobilePhoneNumber</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>接收短信的手机号</td>
+                    </tr>
+
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{
+"tag":"sendmsg",
+"data":
+	{
+		"mobilePhoneNumber":"15814073945"
+	}
+}           </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+	"errcode":0,
+	"msg":"\u77ed\u4fe1\u53d1\u9001\u6210\u529f"
+}        </pre>
+        </div>
+        <hr>
+    </div>
+
+    <footer>
+        <p class="text-muted text-center">© 前海时尚春天</p>
+    </footer>
+</body>
+</html>

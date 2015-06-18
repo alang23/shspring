@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>address - 前海时尚春天 API 文档</title>
+
+<link rel="stylesheet" href="../css/bootstrap3.min.css">
+<script src="../js/jquery-2.0.3.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+				<a name="add_address"></a>
+            </p>
+                        <h3>add_address 添加/修改收货地址</h3>
+        
+            <p>
+                添加收货地址            </p>
+								    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/clearing/add_address            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>register&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					
+					                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+										                                                        <tr>
+                        <td>id</td>
+                        <td>int</td>
+                        <td>修改时必须</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>地址id</td>
+                    </tr>
+					
+										                                                        <tr>
+                        <td>token</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>token</td>
+                    </tr>
+					
+															                                                        <tr>
+                        <td>province_id</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>省份id</td>
+                    </tr>
+					
+																				                                                        <tr>
+                        <td>city_id</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>城市id</td>
+                    </tr>
+					
+																									                                                        <tr>
+                        <td>area_id</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户密码</td>
+                    </tr>
+					
+																									                                                        <tr>
+                        <td>address</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>详细地址</td>
+                    </tr>
+					
+																									                                                        <tr>
+                        <td>mobile</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>电话</td>
+                    </tr>
+					
+																														                                                        <tr>
+                        <td>zip_code</td>
+                        <td>String</td>
+                        <td>否</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>邮编</td>
+                    </tr>
+					
+																														                                                        <tr>
+                        <td>realname</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>收货人</td>
+                    </tr>
+
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{
+	"tag":"add_address",
+	"data":
+		{
+			"uid":1,
+			"id":1, //id不为空则为修改
+			"token":"123123",
+			"province_id":1,
+			"city_id":2,
+			"area_id":3,
+			"address":"\u6df1\u5733\u798f\u7530",
+			"mobile":"13800138000",
+			"zip_code":"\u90ae\u7f16",
+			"realname":"admin"
+		}
+}           </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+	"errcode":0,
+	"msg":"ok",
+	"data":
+	{
+		"id":4 //返回添加的数据id
+	}
+}       </pre>
+        </div>
+		
+		
+		
+<div class="container">
+
+        <div class="page-header">
+                        <p>
+               
+            </p>
+			<a name="del_address"></a>
+                        <h3>del_address 删除收货地址</h3>
+        
+            <p>
+                删除收货地址接口            </p>
+				           <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/clearing/del_address            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>changepwd&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+										                                                        <tr>
+                        <td>token</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>当前token</td>
+                    </tr>
+					                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+										                                                        <tr>
+                        <td>id</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>收货地址id</td>
+                    </tr>
+
+					
+
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{
+	"tag":"del_address",
+	"data":
+	{
+		"uid":1,
+		"token":"asdfasf",
+		"id":1
+	}
+}           </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+	"errcode":0,
+	"msg":"\u77ed\u4fe1\u53d1\u9001\u6210\u529f"
+}        </pre>
+        </div>
+		
+
+        <hr>
+		<div class="container">
+
+        <div class="page-header">
+                        <p>
+               
+            </p>
+			<a name="set_default"></a>
+                        <h3>set_default 设置默认收货地址</h3>
+        
+            <p>
+                设置默认收货地址            </p>
+				           <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/clearing/set_default            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>changepwd&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+										                                                        <tr>
+                        <td>token</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>当前token</td>
+                    </tr>
+					                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+										                                                        <tr>
+                        <td>id</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>收货地址id</td>
+                    </tr>
+
+					
+
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{
+	"tag":"del_address",
+	"data":
+	{
+		"uid":1,
+		"token":"asdfasf",
+		"id":1
+	}
+}           </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+	"errcode":0,
+	"msg":"\u77ed\u4fe1\u53d1\u9001\u6210\u529f"
+}        </pre>
+        </div>
+    </div>
+
+    <footer>
+        <p class="text-muted text-center">© 前海时尚春天</p>
+    </footer>
+</body>
+</html>

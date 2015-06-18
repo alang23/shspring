@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>consignment - 前海时尚春天 API 文档</title>
+
+<link rel="stylesheet" href="../css/bootstrap3.min.css">
+<script src="../js/jquery-2.0.3.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+            </p>
+                        <h3>consignment 寄售申请</h3>
+        
+            <p>
+                用户注册            </p>
+								    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/consignment/submit            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>register&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					
+					                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+					
+										                                                        <tr>
+                        <td>token</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户登陆token</td>
+                    </tr>
+																				                                                        <tr>
+                        <td>name</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>产品名称</td>
+                    </tr>
+																											                                                        <tr>
+                        <td>price</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>产品价格</td>
+                    </tr>	
+																																                                                        <tr>
+                        <td>tel</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>联系方式</td>
+                    </tr>								                                                        <tr>
+                        <td>intro</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>产品描述</td>
+                    </tr>
+					
+															                                                        <tr>
+                        <td>pic</td>
+                        <td>Array</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户上传图片集</td>
+                    </tr>
+																				                                                        <tr>
+                        <td>---</td>
+                        <td>filedata</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>图片base64值(需经过urlencode处理)</td>
+                    </tr>
+																				                                                        <tr>
+                        <td>---</td>
+                        <td>extension</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>图片格式(jpg.png..等)</td>
+                    </tr>
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{
+	"tag":"consignment_submit",
+	"data":
+	{
+		"uid":1,
+		"token":"123123123",
+		"name":"asd",                 //寄售产品名称
+		"price":"asd",                 //寄售产品价格
+		"tel":"asd",                 //寄售联系方式
+		"intro":"asd",                 //寄售产品说明
+		"pic":[                        //图片集
+			{
+			"filedata":"asdSDFds",
+			"extension":"jpg"
+			},
+			{
+			"filedata":"234dfsdf",
+			"extension":"png"
+			}
+		]
+	}
+}         </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+	"errcode":"0",
+	"msg":"200",
+	"data":
+	{
+		"upload_img_num":2    //成功上传图片的数量
+	}
+}       </pre>
+        </div>
+		
+		
+<div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+				<a name="lists"></a>
+            </p>
+                        <h3>consignment_list 寄售列表</h3>
+        
+            <p>
+                个人寄售列表            </p>
+								    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/consignment/lists            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>consignment_list&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					
+					                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+					
+										                                                        <tr>
+                        <td>token</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户登陆token</td>
+                    </tr>
+	
+					
+
+
+
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{
+	"tag":"consignment_list",
+	"data":
+	{
+		"uid":1,                    //用户id           
+		"token":"123123"           //用户token
+	}
+}         </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+"errcode":"0",
+"msg":"200",
+"data":
+{
+	"items":
+	[
+		{
+			"id":"1",                                                   //寄售商品id
+			"name":"\u5305\u5305",                                      //商品名称
+			"img":"http:\/\/www.spring.sp\/uploads\/consignment\/",     //图片地址
+			"price":"30.12",                                             //寄售价格
+			"consignment_date":"2015-05-06",                             //寄售时间
+			"collection":100,                                            //收藏数
+			"exposed":200,                                                //浏览数
+			"status":"0"                                                  //状态(0-审核中，1-寄售中，2-已出售，3-审核失败)
+		}
+	]
+}
+}      </pre>
+        </div>
+<div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+				<a name="del"></a>
+            </p>
+                        <h3>consignment_del 删除寄售</h3>
+        
+                        <p>
+                删除个人寄售产品            </p>
+								    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/consignment/del</p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>consignment_del&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					
+					                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+					
+										                                                        <tr>
+                        <td>token</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户登陆token</td>
+                    </tr>
+											                                                        <tr>
+                        <td>id</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>产品id</td>
+                    </tr>
+					
+
+
+
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{
+	"tag":"consignment_del",
+	"data":
+	{
+		"uid":1,                    //用户id           
+		"token":"123123"           //用户token
+		"id":1                     //寄售商品id
+	}
+}         </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+"errcode":"0",
+"msg":"\u64cd\u4f5c\u6210\u529f",
+"data":[]
+}      </pre>
+        </div>
+    <footer>
+        <p class="text-muted text-center">© 前海时尚春天</p>
+    </footer>
+</body>
+</html>

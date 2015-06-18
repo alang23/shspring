@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>cortex - 前海时尚春天 API 文档</title>
+
+<link rel="stylesheet" href="../css/bootstrap3.min.css">
+<script src="../js/jquery-2.0.3.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+            </p>
+                        <h3>cortex 皮质接口</h3>
+        
+            <p>
+                调取系统颜色列表            </p>
+								    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/cortex/index            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>register&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					
+
+					
+
+
+              </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>{
+			"tag":"cortex",
+			"data":
+				{
+					"token":"15814073945"
+				}
+			}        </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+			{
+			"tag":"color",
+			"errcode":0,
+			"msg":"ok",
+			"data":
+			{
+			"items":
+				[
+					{
+					"id":"51",
+				
+					"img":"http:\/\/www.spring.sp\/uploads\/attribute\/1\/veaucrispetogo.jpg",
+					"title":"\u5c71\u7f8a\u76ae",
+					"cortex":
+					[
+					{
+						"id":"50",
+						"name":"\u9cc4\u9c7c\u76ae",
+						"img":"http:\/\/www.spring.sp\/uploads\/attribute\/1\/0.jpg"
+					},
+					{
+						"id":"51",
+						"name":"Togo leather",
+						"img":"http:\/\/www.spring.sp\/uploads\/attribute\/1\/veaucrispetogo.jpg"
+					}
+				]
+			},
+			{
+			"id":"51",
+		
+			"img":"http:\/\/www.spring.sp\/uploads\/attribute\/1\/veaucrispetogo.jpg",
+			"title":"\u9cc4\u9c7c\u76ae",
+			"cortex":
+			[
+				{
+					"id":"42",
+					"name":"\u9cc4\u9c7c\u76ae",
+					"img":"http:\/\/www.spring.sp\/uploads\/attribute\/1\/0.jpg"
+					},
+						{
+							"id":"43",
+							"name":"Togo leather",
+							"img":"http:\/\/www.spring.sp\/uploads\/attribute\/1\/veaucrispetogo.jpg"
+						}
+					]
+				},
+				{
+					"id":"51",
+				
+					"img":"http:\/\/www.spring.sp\/uploads\/attribute\/1\/veaucrispetogo.jpg",
+					"title":"\u76ae\u9769\u76ae",
+					"cortex":
+					[
+						{
+							"id":"41",
+							"name":"Togo leather",
+							"img":"http:\/\/www.spring.sp\/uploads\/attribute\/1\/veaucrispetogo.jpg"
+						}
+					]
+				}
+			]
+			}
+			}      </pre>
+</div>
+		
+		
+  
+ <div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+				<a name="lists"></a>
+            </p>
+                        <h3>school_cortex 皮质下商品列表</h3>
+        
+                        <p>
+                取得皮质下商品列表            </p>
+				
+				    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/school/cortex</p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>cortex_cortex&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					                                                        <tr>
+                        <td>id</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>皮质id</td>
+                    </tr>
+					                                                        <tr>
+                        <td>page</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>请求的页码</td>
+                    </tr>
+
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{"tag":"school_cortex","data":{"id":4,"page":1}}           </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+"errcode":0,
+"msg":"ok",
+"data":
+	{
+	"name":"\u76ae\u5e26",
+	"intro":"123123",
+	"items":
+		[
+			{
+				"id":"11",
+				"name":"\u7231\u9a6c\u4ed5-\u5305\u53052",
+				"price":"30000.78",
+				"img":"http:\/\/www.spring.sp\/uploads\/product\/20150516040545.jpg"
+			},
+			{
+				"id":"12",
+				"name":"\u6d4b\u8bd5\u4ea7\u54c1",
+				"price":"300000.88",
+				"img":"http:\/\/www.spring.sp\/uploads\/product\/20150516041125.jpg"
+			}
+		]
+	}
+}          </pre>
+        </div>
+
+    <footer>
+        <p class="text-muted text-center">© 前海时尚春天</p>
+    </footer>
+</body>
+</html>

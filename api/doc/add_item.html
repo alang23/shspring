@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>kdt.item.add - 有赞 API 文档</title>
+
+<link rel="stylesheet" href="../css/bootstrap3.min.css">
+<script src="../js/jquery-2.0.3.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="http://open.koudaitong.com/doc" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+            </p>
+                        <h3>kdt.item.add 新增一个商品</h3>
+        
+            <p>
+                新增一个商品            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>cid</td>
+                        <td>Number</td>
+                        <td>否</td>
+                        <td>1231</td>
+                        <td></td>
+                        <td>商品分类的叶子类目id，可参考API：kdt.itemcategories.get</td>
+                    </tr>
+                                                                            <tr>
+                        <td>promotion_cid</td>
+                        <td>Number</td>
+                        <td>否</td>
+                        <td>5</td>
+                        <td></td>
+                        <td>商品推广栏目id，可参考API：kdt.itemcategories.promotions.get</td>
+                    </tr>
+                                                                            <tr>
+                        <td>tag_ids</td>
+                        <td>String</td>
+                        <td>否</td>
+                        <td>1234,1342,551</td>
+                        <td></td>
+                        <td>商品标签id串，结构如：1234,1342,...，可参考API：kdt.itemcategories.tags.get</td>
+                    </tr>
+                                                                            <tr>
+                        <td>price</td>
+                        <td>Price</td>
+                        <td>必须</td>
+                        <td>200.07</td>
+                        <td></td>
+                        <td>商品价格。取值范围：0.01-100000000；精确到2位小数；单位：元。需要在Sku价格所决定的的区间内</td>
+                    </tr>
+                                                                            <tr>
+                        <td>title</td>
+                        <td>String</td>
+                        <td>必须</td>
+                        <td>Nokia N97全新行货</td>
+                        <td></td>
+                        <td>商品标题。不能超过100字，受违禁词控制</td>
+                    </tr>
+                                                                            <tr>
+                        <td>desc</td>
+                        <td>String</td>
+                        <td>必须</td>
+                        <td>这是一个好商品</td>
+                        <td></td>
+                        <td>商品描述。字数要大于5个字符，小于25000个字符 ，受违禁词控制</td>
+                    </tr>
+                                                                            <tr>
+                        <td>is_virtual</td>
+                        <td>Number</td>
+                        <td>必须</td>
+                        <td>0</td>
+                        <td></td>
+                        <td>是否是虚拟商品。0为否，1为是。目前不支持虚拟商品</td>
+                    </tr>
+                                                                                                                                                    <tr>
+                        <td>images[]</td>
+                        <td>byte[]</td>
+                        <td>必须</td>
+                        <td>通过HTTP的POST上传的图片文件列表</td>
+                        <td></td>
+                        <td>商品图片文件列表，可一次上传多张。最大支持 1M，支持的文件类型：gif,jpg,jpeg,png
+							<br>注：图片参数不参与通讯协议签名，参数名中的中括号"[]"必须有，否则不能正常工作</td>
+                    </tr>
+                                                                                                                <tr>
+                        <td>post_fee</td>
+                        <td>Price</td>
+                        <td>必须</td>
+                        <td>5.07</td>
+                        <td></td>
+                        <td>运费。取值范围：0.00-999.00；精确到2位小数；单位：元</td>
+                    </tr>
+                                                                            <tr>
+                        <td>sku_properties</td>
+                        <td>String</td>
+                        <td>否</td>
+                        <td>颜色:黄色;尺寸:M;重量:1KG,颜色:黄色;尺寸:S;重量:1KG</td>
+                        <td></td>
+                        <td>Sku的属性串。格式：pText:vText;pText:vText，多个sku之间用逗号分隔，如：颜色:黄色;尺寸:M,颜色:黄色;尺寸:S。pText和vText文本中不可以存在冒号和分号以及逗号
+<br><br>为了兼顾移动端商品界面展示的美观，目前有赞仅支持Sku的属性个数小于等于三个（比如：颜色、尺寸、重量 这三个属性）。无Sku则为空</td>
+                    </tr>
+                                                                            <tr>
+                        <td>sku_quantities</td>
+                        <td>String</td>
+                        <td>否</td>
+                        <td>2,3</td>
+                        <td></td>
+                        <td>Sku的数量串。结构如：num1,num2,num3 如：2,3。无Sku则为空</td>
+                    </tr>
+                                                                            <tr>
+                        <td>sku_prices</td>
+                        <td>String</td>
+                        <td>否</td>
+                        <td>10.00,5.00</td>
+                        <td></td>
+                        <td>Sku的价格串。结构如：10.00,5.00,... 精确到2位小数。单位:元。无Sku则为空</td>
+                    </tr>
+                                                                            <tr>
+                        <td>sku_outer_ids</td>
+                        <td>String</td>
+                        <td>否</td>
+                        <td>1234,1342</td>
+                        <td></td>
+                        <td>Sku的商家编码（商家为Sku设置的外部编号）串。结构如：1234,1342,... 。sku_properties, sku_quantities, sku_prices, sku_outer_ids在输入数据时要一一对应，即使商家编码为空，也要用逗号相连。无Sku则为空</td>
+                    </tr>
+                                                                            <tr>
+                        <td>skus_with_json</td>
+                        <td>String</td>
+                        <td>否</td>
+                        <td>[{"sku_price":"10.00","sku_property":{"颜色":"黄色","尺寸":"M","重量":"1KG"},"sku_quantity":"2","sku_outer_id":"1234"},{"sku_price":"5.00","sku_property":{"颜色":"黄色","尺寸":"S","重量":"1KG"},"sku_quantity":"3","sku_outer_id":"1242"}]</td>
+                        <td></td>
+                        <td>商品Sku信息的Json字符串，
+					调用时，参数 sku_properties、sku_quantities、sku_prices、sku_outer_ids四个字段组合方式 和 skus_with_json 单字段输入方式 选其一个方式即可，无Sku则为空。
+					</br>具体参见kdt.item.update文档描述。</td>
+                    </tr>
+                                                                            <tr>
+                        <td>origin_price</td>
+                        <td>String</td>
+                        <td>否</td>
+                        <td>淘价：120</td>
+                        <td></td>
+                        <td>显示在“原价”一栏中的信息</td>
+                    </tr>
+                                                                            <tr>
+                        <td>buy_url</td>
+                        <td>String</td>
+                        <td>否</td>
+                        <td>http://item.taobao.com/item.htm?id=36963096</td>
+                        <td></td>
+                        <td>该商品的外部购买地址。当用户购买环境不支持微信或微博支付时会跳转到此地址</td>
+                    </tr>
+                                                                            <tr>
+                        <td>outer_id</td>
+                        <td>String</td>
+                        <td>否</td>
+                        <td>12345</td>
+                        <td></td>
+                        <td>商品货号（商家为商品设置的外部编号）</td>
+                    </tr>
+                                                                            <tr>
+                        <td>buy_quota</td>
+                        <td>Number</td>
+                        <td>否</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>每人限购多少件。0代表无限购，默认为0</td>
+                    </tr>
+                                                                            <tr>
+                        <td>quantity</td>
+                        <td>Number</td>
+                        <td>否</td>
+                        <td>123</td>
+                        <td>0</td>
+                        <td>商品总库存。当商品没有Sku的时候有效，商品有Sku时，总库存会自动按所有Sku库存之和计算</td>
+                    </tr>
+                                                                            <tr>
+                        <td>hide_quantity</td>
+                        <td>Number</td>
+                        <td>否</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>是否隐藏商品库存。在商品展示时不显示商品的库存，默认0：显示库存，设置为1：不显示库存</td>
+                    </tr>
+                                                                            <tr>
+                        <td>fields</td>
+                        <td>String</td>
+                        <td>否</td>
+                        <td>num_iid,title,created</td>
+                        <td></td>
+                        <td>需要返回的商品对象字段，如title,price,desc等。可选值：Item商品结构体中所有字段均可返回；多个字段用“,”分隔。如果为空则返回所有</td>
+                    </tr>
+                                                    </tbody>
+            </table>
+            
+            <h4>返回结果</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                    <tr>
+                        <td>item</td>
+                        <td>
+                                                                                        <a href="http://open.koudaitong.com/doc/api/struct?name=Item">Item</a>
+                                                    </td>
+                        <td>是</td>
+                        <td>商品详情</td>
+                    </tr>
+                                </tbody>
+            </table>
+            
+            <h4>返回结果示例</h4>
+            <pre>{
+    "response": {
+        "item": {
+            "num_iid": 78540,
+            "alias": "v8woefl0",
+            "title": "\u5973\u5f0f\u7fbd\u7ed2\u670d",
+            "cid": 1231,
+            "promotion_cid": 5,
+            "tag_ids": "1234,1342,551",
+            "desc": "\u8fd9\u662f\u4e00\u4e2a\u597d\u5546\u54c1",
+            "origin_price": "\u6dd8\u4ef7\uff1a120",
+            "outer_id": "34143554352",
+            "outer_buy_url": "http:\/\/item.taobao.com\/item.htm?id=37684997213",
+            "buy_quota": 1,
+            "created": "2000-01-01 00:00:00",
+            "is_virtual": false,
+            "is_listing": false,
+            "is_lock": false,
+            "is_used": true,
+            "product_type": "1",
+            "auto_listing_time": "2014-06-01 08:00:00",
+            "detail_url": "http:\/\/wap.koudaitong.com\/v2\/showcase\/goods?alias=v8woefl0&from=wsc",
+            "pic_url": "http:\/\/imgqn.koudaitong.com\/upload_files\/2014\/01\/13\/138961372114213030.jpg",
+            "pic_thumb_url": "http:\/\/imgqn.koudaitong.com\/upload_files\/2014\/01\/13\/138961372114213030_t.jpg",
+            "num": 8888,
+            "sold_num": 888,
+            "price": 5,
+            "post_fee": 5,
+            "skus": [
+                {
+                    "outer_id": "12345",
+                    "sku_id": 2232,
+                    "num_iid": 312,
+                    "quantity": 3,
+                    "properties_name": "20000:3275069:\u54c1\u724c:\u76c8\u8baf;1753146:3485013:\u578b\u53f7:F908",
+                    "properties_name_json": "[{\"kid\":\"20000\",\"vid\":\"3275069\",\"k\":\"\u54c1\u724c\",\"v\":\"\u76c8\u8baf\"},{\"kid\":\"1753146\",\"vid\":\"3485013\",\"k\":\"\u578b\u53f7\",\"v\":\"F908\"}]",
+                    "with_hold_quantity": 5,
+                    "price": 200.07,
+                    "created": "2009-11-04 15:24:43",
+                    "modified": "2009-11-04 15:24:43"
+                },
+                {
+                    "outer_id": "12345",
+                    "sku_id": 2232,
+                    "num_iid": 312,
+                    "quantity": 3,
+                    "properties_name": "20000:3275069:\u54c1\u724c:\u76c8\u8baf;1753146:3485013:\u578b\u53f7:F908",
+                    "properties_name_json": "[{\"kid\":\"20000\",\"vid\":\"3275069\",\"k\":\"\u54c1\u724c\",\"v\":\"\u76c8\u8baf\"},{\"kid\":\"1753146\",\"vid\":\"3485013\",\"k\":\"\u578b\u53f7\",\"v\":\"F908\"}]",
+                    "with_hold_quantity": 5,
+                    "price": 200.07,
+                    "created": "2009-11-04 15:24:43",
+                    "modified": "2009-11-04 15:24:43"
+                }
+            ],
+            "item_imgs": [
+                {
+                    "id": 1645920,
+                    "created": "2000-01-01 00:00:00",
+                    "url": "http:\/\/imgqn.koudaitong.com\/upload_files\/2014\/01\/13\/138961372114213030.jpg",
+                    "thumbnail": "http:\/\/imgqn.koudaitong.com\/upload_files\/2014\/01\/13\/138961372114213030_t.jpg"
+                },
+                {
+                    "id": 1645920,
+                    "created": "2000-01-01 00:00:00",
+                    "url": "http:\/\/imgqn.koudaitong.com\/upload_files\/2014\/01\/13\/138961372114213030.jpg",
+                    "thumbnail": "http:\/\/imgqn.koudaitong.com\/upload_files\/2014\/01\/13\/138961372114213030_t.jpg"
+                }
+            ],
+            "item_qrcodes": [
+                {
+                    "id": 1920,
+                    "name": "\u5173\u6ce8\u540e\u8d2d\u4e70\u5546\u54c1",
+                    "desc": "\u5173\u6ce8\u540e\u83b7\u5f97\u5546\u54c1\u8fdb\u884c\u8d2d\u4e70",
+                    "created": "2014-05-02 17:50:32",
+                    "type": "GOODS_SCAN_FOLLOW",
+                    "discount": "8.8",
+                    "decrease": "18.00",
+                    "link_url": "http:\/\/wap.koudaitong.com\/v2\/showcase\/goods?alias=1aiphpnc&scan=1&activity=iq9tq7v",
+                    "weixin_qrcode_url": "https:\/\/mp.weixin.qq.com\/cgi-bin\/showqrcode?ticket=gQGM8DoAAAAAAAAAASxsdFdqi8vd2Vpe=="
+                },
+                {
+                    "id": 1920,
+                    "name": "\u5173\u6ce8\u540e\u8d2d\u4e70\u5546\u54c1",
+                    "desc": "\u5173\u6ce8\u540e\u83b7\u5f97\u5546\u54c1\u8fdb\u884c\u8d2d\u4e70",
+                    "created": "2014-05-02 17:50:32",
+                    "type": "GOODS_SCAN_FOLLOW",
+                    "discount": "8.8",
+                    "decrease": "18.00",
+                    "link_url": "http:\/\/wap.koudaitong.com\/v2\/showcase\/goods?alias=1aiphpnc&scan=1&activity=iq9tq7v",
+                    "weixin_qrcode_url": "https:\/\/mp.weixin.qq.com\/cgi-bin\/showqrcode?ticket=gQGM8DoAAAAAAAAAASxsdFdqi8vd2Vpe=="
+                }
+            ],
+            "item_tags": [
+                {
+                    "id": 1645920,
+                    "name": "\u5973\u88c5",
+                    "type": "0",
+                    "created": "2013-11-10 22:17:58",
+                    "item_num": 13,
+                    "tag_url": "http:\/\/wap.koudaitong.com\/v2\/showcase\/tag?alias=x52lra"
+                },
+                {
+                    "id": 1645920,
+                    "name": "\u5973\u88c5",
+                    "type": "0",
+                    "created": "2013-11-10 22:17:58",
+                    "item_num": 13,
+                    "tag_url": "http:\/\/wap.koudaitong.com\/v2\/showcase\/tag?alias=x52lra"
+                }
+            ],
+            "item_type": 10
+        }
+    }
+}            </pre>
+        </div>
+        <hr>
+    </div>
+
+    <footer>
+        <p class="text-muted text-center">© youzan.com</p>
+    </footer>
+</body>
+</html>

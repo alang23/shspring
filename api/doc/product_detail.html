@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>product_detail - 前海时尚春天 API 文档</title>
+
+<link rel="stylesheet" href="../css/bootstrap3.min.css">
+<script src="../js/jquery-2.0.3.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+            </p>
+                        <h3>product_detail 导航</h3>
+        
+            <p>
+                产品详情            </p>
+				
+				    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/product/detail            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>kuanshi&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					                                                        <tr>
+                        <td>id</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>产品id</td>
+                    </tr>
+					
+										                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id(未登陆传0)</td>
+                    </tr>
+															                                                        <tr>
+                        <td>token</td>
+                        <td>string</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>当前登陆token(未登陆传空)</td>
+                    </tr>
+		
+
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{
+"tag":"product_detail",
+"data":
+	{
+	"id":4,
+	"uid":1,
+	"token":"aaaaaa"
+	}
+}           </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+"errcode":0,
+"msg":"ok",
+"data":
+	{
+		"img"://产品图集
+		[
+			{
+				"img":"http:\/\/www.spring.sp\/uploads\/product\/20150507124323.jpg"
+			},
+			{
+				"img":"http:\/\/www.spring.sp\/uploads\/product\/20150507124325.jpg"
+			},
+			{
+				"img":"http:\/\/www.spring.sp\/uploads\/product\/20150507124340.jpg"
+			}
+		],
+		"info":
+			{
+				"id":1,//产品编号
+				"suk":"123456",//产品编号
+				"name":"\u7231\u9a6c\u4ed5-\u5305\u53053",//产品名称
+				"brand":"\u7231\u9a6c\u4ed5",//所属品牌
+				"category":"\u76ae\u5e26",//类别
+				"price":"300000.88" 价格,
+				"market":"300000.88" 市场价,
+				"content":"产品描述"
+				'd3url'=>'http://www.baidu.com'//产看3d效果地址
+				'fav'=>1 //是否已经收藏 0-未收藏,1-已收藏,
+				'total'=>1 //目前库存
+				'level'=>10 //几层新
+				'types'=>1 //类型,1.新品，2-二手，3-周边
+				'discount'=>'99'      //折扣
+				'market'=>'0.00'       //市场价
+			}
+	}
+}         </pre>
+        </div>
+        <hr>
+    </div>
+
+    <footer>
+        <p class="text-muted text-center">© 前海时尚春天</p>
+    </footer>
+</body>
+</html>

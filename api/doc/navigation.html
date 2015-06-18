@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>navigation - 前海时尚春天 API 文档</title>
+
+<link rel="stylesheet" href="../css/bootstrap3.min.css">
+<script src="../js/jquery-2.0.3.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+            </p>
+                        <h3>navigation 导航</h3>
+        
+            <p>
+                取得导航信息            </p>
+				
+				    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/navigation            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>navigation&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{"tag":"navigate","data":{"IMEI":"888888888","uid":1}}          </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+	"errcode":0,
+	"msg":"OK",
+	"data":
+	[
+		{
+			"id":"1",
+			"banner_name":"\u6b3e\u5f0f","banner_pic":"AP04HLBL00BV00051.jpg",
+			"banner_key":"kuanshi",
+			"banner_intro":"\u7b80\u4ecb\u5185\u5bb9",
+			"rank":"1"
+		},
+		{
+			"id":"2",
+			"banner_name":"\u989c\u8272",
+			"banner_pic":"AP04HLBL00BV00052.jpg",
+			"banner_key":"yanse",
+			"banner_intro":null,
+			"rank":"2"
+		}
+	]
+}          </pre>
+        </div>
+        <hr>
+    </div>
+
+    <footer>
+        <p class="text-muted text-center">© 前海时尚春天</p>
+    </footer>
+</body>
+</html>

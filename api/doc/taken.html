@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>taken - 前海时尚春天 API 文档</title>
+
+<link rel="stylesheet" href="../css/bootstrap3.min.css">
+<script src="../js/jquery-2.0.3.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+            </p>
+                        <h3>taken 全球街拍</h3>
+        
+            <p>
+                用户注册            </p>
+								    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/taken            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>taken&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					
+					                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>否</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+
+					
+
+
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{
+	"tag":"taken",
+	"data":
+	{
+		"uid":"1",
+
+	}
+}         </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+	"errcode":0,
+	"msg":"ok",
+	"data":
+	{
+		"url":
+		"http:\/\/112.74.89.94\/shspring\/index.php\/taken"  //h5地址
+	}
+}       </pre>
+        </div>
+		
+		
+  
+<div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+				<a name="lists"></a>
+            </p>
+                        <h3>taken_list 全球街拍数据列表</h3>
+        
+            <p>
+                用户注册            </p>
+								    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/taken/lists            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>taken_list&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					
+					                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>否</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+
+										                                                        <tr>
+                        <td>page</td>
+                        <td>int</td>
+                        <td>否</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>请求页数</td>
+                    </tr>
+
+
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{
+	"tag":"taken_list",
+	"data":
+	{
+		"uid":"1",
+		"page":"1"
+
+	}
+}         </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+"errcode":0,
+"msg":"ok",
+"data":
+	{
+		"detailurl":"http:\/\/www.spring.sp\/index.php\/taken\/detail",   (详情地址:http://www.spring.sp/index.php/taken/detail?id=1)
+		"items":
+			[
+			{
+				"id":"1","title":"\u6258\u5c14\u65af\u6cf0",                                             //id
+				"img":                                                                                   //图片信息
+					{
+						"url":"http:\/\/www.spring.sp\/uploads\/taken\/msbk2513105_2.jpg",               //图片地址
+						"width":350,                                                                     //图片宽
+						"height":350,                                                                    //图片高
+						"percentage":1                                                                   //宽高比例
+					}
+				},
+				{
+				"id":"2",
+				"title":"\u6b27\u7f8e\u6700\u65b0\u8857\u62cd\u7b80\u5355\u98ce",
+				"img":
+					{
+						"url":"http:\/\/www.spring.sp\/uploads\/taken\/msgp2710804_21.jpg",
+						"width":350,
+						"height":350,
+						"percentage":1
+					}
+				}
+			]
+	}
+}      </pre>
+        </div>
+
+    <footer>
+        <p class="text-muted text-center">© 前海时尚春天</p>
+    </footer>
+</body>
+</html>

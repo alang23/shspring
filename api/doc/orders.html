@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>orders - 前海时尚春天 API 文档</title>
+
+<link rel="stylesheet" href="../css/bootstrap3.min.css">
+<script src="../js/jquery-2.0.3.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+            </p>
+                        <h3>orders 我的订单</h3>
+        
+            <p>
+                获取个人订单列表            </p>
+								    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/orders/lists            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>order_list&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					
+                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+					
+                                                        <tr>
+                        <td>token</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户登陆token</td>
+                    </tr>
+
+              </tbody>
+            </table>
+                                    <h4>请求示例</h4>
+            <pre>{
+			"tag":"order_list",
+			"data":
+				{
+					"uid":1,
+					"token":"15814073945"
+				}
+			}        </pre>
+        </div>
+   
+                        <h4>返回结果示例</h4>
+            <pre>
+{
+"errcode":0,
+"msg":"ok",
+"data":
+{
+	"items":
+	[
+		{
+		"order_id":"6",    //订单id
+		"no":"HM1432696913",  //订单编号
+		"img":  //订单产品图片集
+		[
+			"http:\/\/www.spring.sp\/uploads\/productthumb\/20150516040545.jpg",
+			"http:\/\/www.spring.sp\/uploads\/productthumb\/20150516041125.jpg"
+		],
+		"total":199984,  //订单总额
+		"status":"1",     //订单状态（0-未付款，1-待发货，2-待签收，3-完成，4-失败）
+		"num":"1"        //订单商品数量
+		}
+	]
+}
+}     </pre>
+</div>
+		
+		
+  
+    </div>
+<div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+				<a name="detail"></a>
+            </p>
+                        <h3>orders_detail 订单详情</h3>
+        
+            <p>
+                获取订单详情            </p>
+								    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/orders/detail            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>order_list&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					
+                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+					
+                                                        <tr>
+                        <td>token</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户登陆token</td>
+                    </tr>
+					
+					                                                        <tr>
+                        <td>order_id</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>订单id</td>
+                    </tr>
+
+              </tbody>
+            </table>
+                                    <h4>请求示例</h4>
+            <pre>{
+			"tag":"order_detail",
+			"data":
+				{
+					"uid":1,
+					"token":"15814073945"，
+					"order_id":6
+				}
+			}        </pre>
+        </div>
+   
+                        <h4>返回结果示例</h4>
+            <pre>
+{
+"errcode":0,
+"msg":"ok",
+"data":
+	{
+		"order_detail":  //订单基本信息
+		{
+			"order_no":"HM1432696913",    //订单号
+			"order_time":"2015-05-27 05:21:53",  //订单时间
+			"order_status":"\u5f85\u53d1\u8d27"  //订单状态
+			"invoice_type":"1",                //发票类型（1-不开发票，2-个人发票，3-单位发票）
+			"invoice_title":"test"             //发票抬头(单位发票)
+		},
+		"exp_info":   //配送信息
+		{
+			"user":"admin",                     //收货人
+			"exp_type":"\u5feb\u9012",          //配送方式    
+			"address":"shenzhen futianqu"       //配送地址(1.快递：此地址为快递地址,2-自取：该地址为自取地址，3-送货：该地址为送货地址)
+		},
+		"products":
+		{
+			"total":39996,     //商品总价
+			"items":           //商品列表
+			[
+				{
+					"product_id":"9",                                                               //商品id
+					"product_name":"\u7231\u9a6c\u4ed5-\u5305\u53052",                              //商品名称
+					"img":"http:\/\/www.spring.sp\/uploads\/productthumb\/20150516040545.jpg",      //商品图片
+					"price":"9999",                                                                 //商品单价
+					"num":"2",                                                                      //商品数量
+					"total":19998                                                                   //商品总价
+				},
+				{
+					"product_id":"10",
+					"product_name":"\u6d4b\u8bd5\u4ea7\u54c1",
+					"img":"http:\/\/www.spring.sp\/uploads\/productthumb\/20150516041125.jpg",
+					"price":"9999",
+					"num":"2",
+					"total":19998
+				}
+			]
+		},
+		"discount":                                    //商品折扣情况
+			[
+				{
+					"title":"\u7ea2\u5305",            //促销活动名称
+					"price":100                        //抵消金额
+				},
+				{
+					"title":"\u4f18\u60e0\u5238",
+					"price":0
+				}
+			]
+		"intro":"\u8fd9\u91cc\u662f\u5907\u6ce8",                        //订单相关说明
+		"msg":"test",                                                   //顶部提示语
+		"total":39996                                                   //订单该付金额
+	}
+}    </pre>
+</div>
+
+<div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+				<a name="updateorderstatus"></a>
+            </p>
+                        <h3>update_order_status 修改订单状态(支付/取消)</h3>
+        
+            <p>
+                用户修改订单状态            </p>
+								    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/orders/update_order_status            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>update_order_status&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					
+                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+					
+                                                        <tr>
+                        <td>token</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户登陆token</td>
+                    </tr>
+					
+					                                                        <tr>
+                        <td>order_id</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>订单id</td>
+                    </tr>
+					
+										                                                        <tr>
+                        <td>action</td>
+                        <td>string</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>操作标示(取消订单:order_cannel,付款:order_payment)</td>
+                    </tr>
+
+              </tbody>
+            </table>
+                                    <h4>请求示例</h4>
+            <pre>{
+			"tag":"update_order_status",
+			"data":
+				{
+					"uid":1,
+					"token":"15814073945"，
+					"order_id":6,
+					"action":"order_cannel"
+				}
+			}        </pre>
+        </div>
+   
+                        <h4>返回结果示例</h4>
+            <pre>
+{
+	"errcode":"0",
+	"msg":"修改成功",
+	"data":[]
+}    </pre>
+</div>
+
+<!--
+<div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+				<a name="buy_again"></a>
+            </p>
+                        <h3>buy_again 用户再次购买</h3>
+        
+            <p>
+                用户从订单列表再次购买商品            </p>
+								    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/orders/buy_again            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>update_order_status&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					
+                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+					
+                                                        <tr>
+                        <td>token</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户登陆token</td>
+                    </tr>
+					
+					                                                        <tr>
+                        <td>order_id</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>订单id</td>
+                    </tr>
+					
+
+              </tbody>
+            </table>
+                                    <h4>请求示例</h4>
+            <pre>{
+			"tag":"update_order_status",
+			"data":
+				{
+					"uid":1,
+					"token":"15814073945"，
+					"order_id":6,
+					
+				}
+			}        </pre>
+        </div>
+   
+                        <h4>返回结果示例</h4>
+            <pre>
+{
+"errcode":"0",
+"msg":"200",
+"data":
+	{
+	"products":                                 //产品集
+		[
+			{
+				"id":"11",                                                                     //产品id
+				"name":"\u7231\u9a6c\u4ed5-\u5305\u53052",                                     //产品名称
+				"img":"http:\/\/www.spring.sp\/uploads\/productthumb\/20150516040545.jpg",     //产品图片url
+				"num":"10",                                                                     //购买数量
+				"price":"30000.78",                                                             //单价
+				"total":"300007.8",                                                             //产品总价
+				"enabled":"1",                                                                  //此处不需要
+				"label":"\u5e93\u5b58\u4e0d\u8db3"                                              //库存不足提示
+			},
+			{
+				"id":"12",
+				"name":"\u6d4b\u8bd5\u4ea7\u54c1",
+				"img":"http:\/\/www.spring.sp\/uploads\/productthumb\/20150516041125.jpg",
+				"num":"2",
+				"price":"300000.88",
+				"total":"600001.76",
+				"enabled":"1",
+				"label":""
+			}
+		]
+	}
+}   </pre>
+</div>
+-->
+<div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+				<a name="logistics"></a>
+            </p>
+                        <h3>logistics 订单物流跟踪</h3>
+        
+            <p>
+                用户从订单列表再次购买商品            </p>
+								    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/orders/logistics            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>logistics&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					
+                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+					
+                                                        <tr>
+                        <td>token</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户登陆token</td>
+                    </tr>
+					
+					                                                        <tr>
+                        <td>order_id</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>订单id</td>
+                    </tr>
+										                                                        <tr>
+                        <td>type</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>模块标示</td>
+                    </tr>
+					
+
+              </tbody>
+            </table>
+                                    <h4>请求示例</h4>
+            <pre>{
+			"tag":"logistics",
+			"data":
+				{
+					"uid":1,
+					"token":"15814073945"，
+					"order_id":6,          //订单id
+					"type":"order",         //order:普通产品物流，consignment：寄售物流跟踪
+					
+				}
+			}        </pre>
+        </div>
+   
+                        <h4>返回结果示例</h4>
+            <pre>
+{
+	"errcode":"0",
+	"msg":"200",
+	"data":
+	{
+		"order_no":"HM88888888",                                                       //订单编号
+		"exp_log":                                                                     //订单跟踪信息
+		[
+			//每个事件为一个item
+			{
+				"info":"\u60a8\u7684\u8ba2\u5355\u53c8\u987a\u4e30\u914d\u9001",        //物流时间
+				"time":"2015\/06\/07 18:06"                                             //发生时间
+			},
+			//item2
+			{
+				"info":"\u5230\u4ed3\u5e93",
+				"time":"2015\/06\/07 18:06"
+			},
+			//item3
+			{
+				"info":"\u914d\u9001",
+				"time":"2015\/06\/07 18:06"
+			}
+			//items....
+			............
+		]
+	}
+}   </pre>
+</div>
+
+<div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+				<a name="buy_again"></a>
+            </p>
+                        <h3>buy_again 订单再次购买</h3>
+        
+            <p>
+                用户从订单列表再次购买商品            </p>
+								    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/orders/buy_again            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>logistics&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					
+                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+					
+                                                        <tr>
+                        <td>token</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户登陆token</td>
+                    </tr>
+					
+					                                                        <tr>
+                        <td>order_id</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>订单id</td>
+                    </tr>
+										                                                        
+					
+
+              </tbody>
+            </table>
+                                    <h4>请求示例</h4>
+            <pre>{
+			"tag":"logistics",
+			"data":
+				{
+					"uid":1,
+					"token":"15814073945"，
+					"order_id":6,          //订单id
+					
+					
+				}
+			}        </pre>
+        </div>
+   
+                        <h4>返回结果示例</h4>
+            <pre>
+{
+"errcode":0,
+"msg":"\u5217\u8868",
+"data":
+	{
+		"count":12,                                                                         //订单产品总数
+		"total":"900009.56",                                                                //商品总额
+		"intro":"\u83b7\u5f97\u79ef\u5206",                                                 // 备注
+		"items":[                                                                           //商品信息集
+			{
+				"id":"9",
+				"name":"\u7231\u9a6c\u4ed5-\u5305\u53052",
+				"img":"http:\/\/www.spring.sp\/uploads\/productthumb\/20150516040545.jpg",
+				"num":"10",
+				"price":"30000.78",
+				"total":"300007.8",
+				"enabled":"",
+				"label":""
+			}
+			,
+			{
+				"id":"10",
+				"name":"\u6d4b\u8bd5\u4ea7\u54c1",
+				"img":"http:\/\/www.spring.sp\/uploads\/productthumb\/20150516041125.jpg",
+				"num":"2",
+				"price":"300000.88",
+				"total":"600001.76",
+				"enabled":"",
+				"label":""
+			}
+		]
+	}
+}   </pre>
+</div>
+    <footer>
+        <p class="text-muted text-center">© 前海时尚春天</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>cart - 前海时尚春天 API 文档</title>
+
+<link rel="stylesheet" href="../css/bootstrap3.min.css">
+<script src="../js/jquery-2.0.3.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+            </p>
+                        <h3>cart 购物车</h3>
+        
+            <p>
+                点击购买            </p>
+				
+				    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/cart/buy            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>buy&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+					                                                        <tr>
+                        <td>pid</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>产品id</td>
+                    </tr>
+										                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>否</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+															                                                        <tr>
+                        <td>token</td>
+                        <td>int</td>
+                        <td>否</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>当前登陆token</td>
+                    </tr>
+							                                                        <tr>
+                        <td>num</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>数量</td>
+                    </tr>
+												                                                        <tr>
+                        <td>enabled</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>是否勾选(0-未勾选，1--勾选)</td>
+                    </tr>
+
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+{
+"tag":"buy",
+"data":
+	{
+		"pid":1,
+		"uid":1,
+		"pid":1,
+		"token":"13123",
+		"num":1,
+		"enabled":1
+	}
+}            </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+	"errcode":0,
+	"msg":"产品添加成功 ",
+	"data":
+	[]
+}        </pre>
+        </div>
+        <hr>
+		
+		<div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" ></a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>            </p>
+                        <h3>cart 购物车列表</h3>
+        				<a name="list"></a>
+                        <p>
+                购物车列表</p>
+				
+				        <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/cart/index</p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>buy&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+
+										                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>否</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+
+							                                                        <tr>
+                        <td>items</td>
+                        <td>Array</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>购物车产品信息</td>
+                    </tr>
+
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+            <pre>
+			<!--
+{
+	"tag":"cart_list",
+	"data":{
+	"uid":1,
+	"items":
+		[
+			{
+				"id":9, //产品id
+				"num":2  //数量
+				"enabled":0 //是否勾选（0-未勾选,1-勾选）
+			},
+			{
+				"id":10,
+				"num":1,
+				"enabled":1
+			},
+			{
+				"id":11,
+				"num":1,
+				"enabled":1
+			}
+		]
+	}
+}   
+
+-->
+
+{
+	"tag":"cart_list",
+	"data":
+	{
+		"uid":1,
+		"token":"13123"
+	}
+}          </pre>
+        </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+	"errcode":0,
+	"msg":"\u5217\u8868",
+	"data":
+	{
+		"count":3, //商品数量
+		"total":630002.76, //商品总价
+		"intro":"\u83b7\u5f97\u79ef\u5206", //订单备注
+		"items":
+			[
+				{
+					"id":"9",  //商品id
+					"name":"\u7231\u9a6c\u4ed5-\u5305\u5305",//商品名称
+					"img" : 'http://www.xxxx.com/1.jpg', //产品图片
+					"num":"1", //可购买数量
+					"price":"30000.78", //单价
+					"total":30000.78 ,  //总价
+					"enabled":1   //是否是勾选
+					'label':'库存不足'  //如库存不足
+				},
+				{
+					"id":"10",
+					"name":"\u7231\u9a6c\u4ed5-\u5305\u53052",
+					"img" : 'http://www.xxxx.com/1.jpg', //产品图片
+					"num":1,
+					"price":"300000.99",
+					"total":300000.99,
+					"enabled":0,
+					'label':'库存不足'   
+				},
+			]
+	}
+}        </pre>
+        </div>
+    </div>
+	<hr/>
+<div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+            </p>
+			<a name="selected"></a>
+                        <h3>cart 购物车全选/全部选</h3>
+        
+                        <p>
+                cart 购物车全选/全部选            </p>
+				
+				    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/cart/selected            </p>
+        </div>
+        
+  <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>selected&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+	
+										                                                        <tr>
+                        <td>uid</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>用户id</td>
+                    </tr>
+															                                                        <tr>
+                        <td>token</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>当前登陆token</td>
+                    </tr>
+					
+																				                                                        <tr>
+                        <td>act</td>
+                        <td>int</td>
+                        <td>是</td>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>全选：1，全部选：0</td>
+                    </tr>
+	
+		
+
+              </tbody>
+            </table>
+            
+   
+                        <h4>请求示例</h4>
+      <pre>
+{
+"tag":"selected",
+"data":
+	{
+		"uid":1,	
+		"token":"13123",
+		"act":1,
+	}
+}            </pre>
+    </div>
+		
+            
+            <h4>返回结果示例</h4>
+            <pre>
+{
+	"errcode":0,
+	"msg":"操作成功 ",
+
+}        </pre>
+        </div>
+    <footer>
+        <p class="text-muted text-center">© 前海时尚春天</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>banner - 前海时尚春天 API 文档</title>
+
+<link rel="stylesheet" href="../css/bootstrap3.min.css">
+<script src="../js/jquery-2.0.3.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="page-header">
+                        <p>
+                <a href="../api.html" >&laquo;&nbsp;返回到API列表</a>
+                <a class="pull-right" href="javascript:history.back();" >返回到上一页&nbsp;&raquo;</a>
+            </p>
+                        <h3>banner 栏目首页内容</h3>
+        
+            <p>
+                取得导航信息            </p>
+				
+				    <p>
+                请求url：http://112.74.89.94/shspring/index.php/api/banner            </p>
+        </div>
+        
+        <div>
+            <h4>应用级输入参数</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>示例值</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                                        <tr>
+                        <td>tag</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>navigation&nbsp;</td>
+                        <td></td>
+                        <td>每个接口的标示</td>
+                    </tr>
+                                                        <tr>
+                        <td>key</td>
+                        <td>String</td>
+                        <td>是</td>
+                        <td>kuanshi&nbsp;</td>
+                        <td></td>
+                        <td>导航key值</td>
+                    </tr>
+					                                                        <tr>
+                        <td>page</td>
+                        <td>int</td>
+                        <td>否</td>
+                        <td>10</td>
+                        <td></td>
+                        <td>页数</td>
+                    </tr>
+	
+                    </tbody>
+            </table>
+            
+   
+                        <h4>请求示例（款式）</h4>
+            <pre>
+{"tag":"banner","data":{"key":"kuanshi"}}           </pre>
+                        <h4>请求示例（发现）</h4>
+            <pre>
+{"tag":"banner","data":{"key":"faxian"}}           </pre>
+                        <h4>请求示例（二手）</h4>
+            <pre>
+{"tag":"banner","data":{"key":"ershou","page":1}}           </pre>
+                        <h4>请求示例（周边）</h4>
+                        <pre>
+{"tag":"banner","data":{"key":"zhoubian","page":1}}           </pre>
+        </div>
+		
+            
+            <h4>返回结果示例(款式)</h4>
+            <pre>
+			{
+			"errcode":0,
+			"msg":"ok",
+			"data":
+			[
+				  {
+					  "img":"http:\/\/www.spring.sp\/uploads\/banner\/msgp2710804_21.jpg",
+					  "id":"8"
+				  },
+				  {
+					  "img":"http:\/\/www.spring.sp\/uploads\/banner\/msgp2710804_22.jpg",
+					  "id":"8"
+				  },
+				  {
+					  "img":"http:\/\/www.spring.sp\/uploads\/banner\/concierge011.jpg",
+					  "id":"8"
+				  }
+			 ]
+			}</pre>
+			
+			            <h4>返回结果示例(发现)</h4>
+            <pre>
+{
+"errcode":0,
+"msg":"ok",
+"data":
+	{
+	"total":4,
+	"items":
+		[
+			{
+				"id":"10",
+				"name":"\u6258\u5c14\u65af\u6cf0",
+				"img":"http:\/\/www.spring.sp\/uploads\/discovery\/concierge011.jpg",
+				"key":"1"
+			},
+			{
+				"id":"11",
+				"name":"\u6258\u5c14\u65af\u6cf0",
+				"img":"http:\/\/www.spring.sp\/uploads\/discovery\/AP04HLBL00BV0005.jpg",
+				"key":"2"
+			},
+			{
+				"id":"12",
+				"name":"\u6258\u5c14\u65af\u6cf0",
+				"img":"http:\/\/www.spring.sp\/uploads\/discovery\/veautadelakt.jpg",
+				"key":"3"
+			},
+			{
+				"id":"13",
+				"name":"\u6258\u5c14\u65af\u6cf0",
+				"img":"http:\/\/www.spring.sp\/uploads\/discovery\/msgp2710804_21.jpg",
+				"key":"1"
+			}
+		]
+	}
+}</pre>
+
+            <h4>返回结果示例(二手，周边)</h4>
+            <pre>
+			{
+				"errcode":0,
+				"msg":"ok",
+				"data":
+				{
+					"total":2, //总数据数
+					"items":[
+						{
+							"id":"1", //产品id
+							"name":"\u4ea7\u54c1\u4e003242344", //产品名称
+							"img":"http:\/\/www.spring.sp\/uploads\/productthumb\/",  //图片地址
+							"price":"30000.12", //价格
+							"discount":"99"   //折扣
+						},
+						{
+							"id":"7",
+							"name":"\u7231\u9a6c\u4ed5-\u5305\u53053",
+							"img":"http:\/\/www.spring.sp\/uploads\/productthumb\/msgp2710804_2.jpg",
+							"price":"30000.78",
+							"discount":"99"
+						}
+					]
+				}
+			}        </pre>
+        </div>
+        <hr>
+    </div>
+
+    <footer>
+        <p class="text-muted text-center">© 前海时尚春天</p>
+    </footer>
+</body>
+</html>
